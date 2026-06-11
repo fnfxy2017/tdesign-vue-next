@@ -6,6 +6,8 @@ import _ChatInput from './chat-input';
 import _ChatContent from './chat-content';
 import _ChatReasoning from './chat-reasoning';
 import _ChatLoading from './chat-loading';
+import _ChatChainOfThought from './chat-chain-of-thought';
+import _ChatChainOfThoughtStep from './chat-chain-of-thought/chat-chain-of-thought-step';
 
 import _ChatActionbar from './chat-actionbar';
 import _ChatSender from './chat-sender';
@@ -29,6 +31,8 @@ import {
   TdChatSenderProps,
   TdChatReasoningProps,
   TdChatLoadingProps,
+  TdChatChainOfThoughtProps,
+  TdChatChainOfThoughtStepProps,
 } from './type';
 
 import './style';
@@ -47,6 +51,8 @@ export type ChatInputProps = TdChatInputProps;
 export type ChatSenderProps = TdChatSenderProps;
 export type ChatReasoningProps = TdChatReasoningProps;
 export type ChatLoadingProps = TdChatLoadingProps;
+export type ChatChainOfThoughtProps = TdChatChainOfThoughtProps;
+export type ChatChainOfThoughtStepProps = TdChatChainOfThoughtStepProps;
 
 export const ChatList = withInstall(_ChatList);
 export const ChatSender = withInstall(_ChatSender);
@@ -69,6 +75,8 @@ export const ChatAction = withInstall(_ChatActionbar); // 兼容历史版本，�
 export const ChatInput = withInstall(_ChatInput);
 export const ChatReasoning = withInstall(_ChatReasoning);
 export const ChatItem = withInstall(_ChatItem);
+export const ChatChainOfThought = withInstall(_ChatChainOfThought, 't-chat-chain-of-thought');
+export const ChatChainOfThoughtStep = withInstall(_ChatChainOfThoughtStep, 't-chat-chain-of-thought-step');
 
 // 导出 MarkdownEngine
 export { TdMarkdownEngine as MarkdownEngine };
@@ -93,6 +101,8 @@ export default {
     app.use(ChatInput, config);
     app.use(ChatItem, config);
     app.use(ChatReasoning, config);
+    app.use(ChatChainOfThought, config);
+    app.use(ChatChainOfThoughtStep, config);
     app.component('TChat', Chat);
     app.component('TChatAction', ChatAction);
   },

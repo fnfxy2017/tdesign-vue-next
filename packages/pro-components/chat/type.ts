@@ -491,4 +491,53 @@ export type * from 'tdesign-web-components/lib/chat-sender/type';
 export type * from 'tdesign-web-components/lib/filecard/type';
 export type * from 'tdesign-web-components/lib/chat-message/index';
 export type * from 'tdesign-web-components/lib/chatbot/type';
+export interface TdChatChainOfThoughtProps {
+  /**
+   * 是否折叠（受控）
+   */
+  collapsed?: boolean;
+  /**
+   * 是否折叠。非受控属性
+   * @default false
+   */
+  defaultCollapsed?: boolean;
+  /**
+   * 折叠面板头内容
+   */
+  header?: TNode;
+  /**
+   * 展开图标
+   */
+  expandIcon?: TNode;
+  /**
+   * 展开图标位置
+   * @default right
+   */
+  expandIconPlacement?: 'left' | 'right';
+  /**
+   * 折叠状态变化回调
+   */
+  onCollapsedChange?: (value: boolean) => void;
+}
+
+export interface TdChatChainOfThoughtStepProps {
+  /**
+   * 步骤标题
+   */
+  label?: string;
+  /**
+   * 步骤描述
+   */
+  description?: string;
+  /**
+   * 步骤状态
+   * @default complete
+   */
+  status?: 'complete' | 'active' | 'pending';
+  /**
+   * 自定义图标插槽
+   */
+  icon?: TNode;
+}
+
 export type * from 'tdesign-web-components/lib/chat-action/type';
