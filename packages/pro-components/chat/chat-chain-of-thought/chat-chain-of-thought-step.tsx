@@ -10,7 +10,10 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('chat-chain-of-thought__step');
     const renderTNodeJSX = useTNodeJSX();
 
-    const collapsed = inject('chat-chain-of-thought-collapsed', computed(() => false));
+    const collapsed = inject(
+      'chat-chain-of-thought-collapsed',
+      computed(() => false),
+    );
 
     const cls = computed(() => [
       `${COMPONENT_NAME.value}`,
@@ -20,10 +23,7 @@ export default defineComponent({
       },
     ]);
 
-    const iconCls = computed(() => [
-      `${COMPONENT_NAME.value}-icon`,
-      `${COMPONENT_NAME.value}-icon--${props.status}`,
-    ]);
+    const iconCls = computed(() => [`${COMPONENT_NAME.value}-icon`, `${COMPONENT_NAME.value}-icon--${props.status}`]);
 
     return () => (
       <div class={cls.value}>
@@ -36,9 +36,7 @@ export default defineComponent({
         </div>
         <div class={`${COMPONENT_NAME.value}-content`}>
           {props.label && <div class={`${COMPONENT_NAME.value}-label`}>{props.label}</div>}
-          {props.description && (
-            <div class={`${COMPONENT_NAME.value}-description`}>{props.description}</div>
-          )}
+          {props.description && <div class={`${COMPONENT_NAME.value}-description`}>{props.description}</div>}
           {renderTNodeJSX('default')}
         </div>
       </div>

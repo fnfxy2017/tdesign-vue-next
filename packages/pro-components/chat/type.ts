@@ -497,6 +497,10 @@ export interface TdChatChainOfThoughtProps {
    */
   collapsed?: boolean;
   /**
+   * v-model 绑定值
+   */
+  modelValue?: boolean;
+  /**
    * 是否折叠。非受控属性
    * @default false
    */

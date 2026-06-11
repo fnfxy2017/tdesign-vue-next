@@ -13,6 +13,11 @@ export default {
     type: Boolean as PropType<TdChatChainOfThoughtProps['collapsed']>,
     default: undefined,
   },
+  /** v-model 绑定值 */
+  modelValue: {
+    type: Boolean as PropType<TdChatChainOfThoughtProps['collapsed']>,
+    default: undefined,
+  },
   /** 是否折叠。非受控属性 */
   defaultCollapsed: {
     type: Boolean as PropType<TdChatChainOfThoughtProps['defaultCollapsed']>,
